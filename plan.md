@@ -1,66 +1,71 @@
-# 📘 Plan de Proyecto TFG: Comparación de Solvers para OA
+# 📘 Proyecto: Comparación de Solvers para la Generación de Arreglos Ortogonales (Orthogonal Arrays)
 
-## 🎯 Objetivo del Proyecto
+## 🎯 Objetivo General
 
-Comparar distintos **solvers comerciales y libres** para resolver el problema de **generación de matrices ortogonales (Orthogonal Arrays, OA)** dados sus parámetros \( N, k, s, t \).
+Evaluar el rendimiento y escalabilidad de distintas estrategias de modelado y solvers (MILP, Branch-and-Price, Hexaly, CP, heurísticas) en la generación de arreglos ortogonales OA(N, k, s, t), considerando cobertura exacta y criterios de eficiencia computacional.
 
-Se utilizará un **modelo matemático común**, implementado **preferiblemente en Python**, que será adaptado a cada solver para realizar una comparación justa y rigurosa.
+---
 
-## 🧰 Solvers considerados
+## 📅 Fases del Proyecto
 
-- [x] Gurobi
-- [x] CPLEX
-- [x] Hexaly
-- [x] OR-Tools
-- [ ] Otros (a evaluar): Z3, MiniZinc, Chuffed...
+### 🔵 FASE 1: Especificación del problema y diseño experimental
 
-## ⚙️ Criterios de comparación
+**Duración:** 1–2 semanas  
+**Responsables:** TBD  
+**Tareas:**
+- [ ] Definir parámetros de entrada: \(N, k, s, t\).
+- [ ] Seleccionar subconjunto de instancias (valores válidos de \(s, t, k\), con \(\lambda = N/s^t \in \mathbb{Z}\)).
+- [ ] Establecer métricas: tiempo, factibilidad, gap, calidad del diseño.
+- [ ] Elegir métodos a implementar:
+  - [x] MILP (selección de filas, variables por celda)
+  - [x] Hexaly
+  - [ ] Branch-and-Price (Gurobi + CP)
+  - [ ] Metaheurísticas (opcional)
+- [ ] Crear tabla de benchmark (ej. `results/oa_metrics.csv`)
 
-| Criterio                 | Descripción |
-|--------------------------|-------------|
-| 🕒 **Performance**        | Tiempo de cómputo para resolver instancias variadas. |
-| ✅ **Calidad de solución** | Grado de ortonormalidad, cobertura y completitud de las matrices generadas. |
-| ✍️ **Facilidad de modelado** | Claridad, concisión y legibilidad del modelo en el lenguaje del solver. |
-| 📈 **Escalabilidad**       | Comportamiento al aumentar los parámetros \( N, k, s, t \). |
-| 💸 **Precio y licencia**   | Coste de uso, disponibilidad de licencias académicas. |
-| 🌍 **Otros factores**      | Soporte técnico, comunidad activa, documentación, facilidad de integración, etc. |
+---
 
-## 🧪 Metodología
+### 🟢 FASE 2: Implementación de modelos
 
-1. Definir modelo matemático base.
-2. Adaptarlo a cada solver (Python preferred).
-3. Ejecutar sobre varias instancias OA con diferentes parámetros.
-4. Registrar tiempos, soluciones y logs.
-5. Analizar resultados con gráficos y tablas.
-6. Redactar memoria con interpretación crítica.
+**Duración:** 3–5 semanas  
+**Responsables:** TBD  
+**Subtareas:**
 
-## 📦 Organización del repositorio
+#### 🔹 MILP en Pyomo (con Gurobi)
+- [ ] Selección de filas (modelo básico)
+- [ ] Modelo con variables \(x_{i,j,v}\) y restricciones de cobertura
+- [ ] Modelo de generación columna por columna
 
-```
-tfg-comparacion-solvers-OA/
-├── codigo/       → Implementaciones por solver
-├── datos/        → Instancias, resultados crudos
-├── figuras/      → Gráficas exportadas
-├── tablas/       → Comparativas en LaTeX/CSV
-├── memoria/      → Proyecto LaTeX exportado desde Overleaf
-├── plan.md       → Este documento
-└── README.md     → Descripción general del proyecto
-```
+#### 🔹 Hexaly y OR-tools
+- [ ] Traducir modelos MILP a los formatos de modelado de Hexaly y OR-tools
+- [ ] Implementar restricciones de cobertura exacta
 
-## 📅 Fases y entregas estimadas
+---
 
-| Fase                             | Fecha objetivo   | Estado |
-|----------------------------------|------------------|--------|
-| Búsqueda de solvers y documentación | 1 junio 2025     | ☐      |
-| Diseño del modelo matemático OA     | 5 junio 2025     | ☐      |
-| Implementación en Gurobi y CPLEX    | 10 junio 2025    | ☐      |
-| Implementación en Hexaly y OR-Tools | 15 junio 2025    | ☐      |
-| Experimentación y benchmarking      | 20 junio 2025    | ☐      |
-| Generación de gráficos/tablas       | 25 junio 2025    | ☐      |
-| Redacción final de la memoria       | 30 junio 2025    | ☐      |
+### 🟡 FASE 3: Ejecución experimental
 
-## 📝 Notas
+**Duración:** 2–3 semanas  
+**Responsables:** TBD  
+**Tareas:**
+- [ ] Ejecutar cada método sobre el conjunto de instancias
+- [ ] Medir:
+  - Tiempo total
+  - Calidad del diseño (aunque siempre se exige cobertura exacta)
+- [ ] Guardar resultados (`results/oa_metrics.csv`)
+- [ ] Generar gráficos de comparación (`figures/`)
 
-- Todo código preferentemente en Python para facilitar comparación.
-- Las gráficas se generarán con Matplotlib o Plotly.
-- La exportación de resultados para LaTeX será automática desde scripts.
+---
+
+### 🔴 FASE 4: Análisis y documentación
+
+**Duración:** 1–2 semanas  
+**Responsables:** TBD  
+**Tareas:**
+- [ ] Analizar qué métodos escalan mejor con \(s\), \(t\), \(k\)
+- [ ] Comparar tiempo de cómputo, factibilidad, facilidad de modelado, estabilidad
+- [ ] Redactar memoria (`memoria/memoria.tex`)
+- [ ] Conclusiones y recomendaciones por tipo de instancia
+
+---
+
+

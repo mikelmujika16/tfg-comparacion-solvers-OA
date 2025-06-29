@@ -1,0 +1,8 @@
+numpy
+pandas
+oapackage
+matplotlib
+seaborn
+ortools
+pyomo
+hexaly @ https://pip.hexaly.com/simple/hexaly/
