@@ -67,3 +67,14 @@ timestamp,N,k,s,t,method,runtime_sec,feasible,quality,notes
 2025-06-29 20:01:12,343,5,7,2,hexaly_row_selection,1882.2517,True,,generado vía CLI
 2025-06-29 20:01:32,128,6,4,3,hexaly_row_selection,10000.0,False,,generado vía CLI
 2025-06-29 22:02:40,256,5,4,3,hexaly_row_selection,929.7016,True,,generado vía CLI
+2025-06-29 22:03:00,512,5,8,2,hexaly_row_selection,10000.0,False,,generado vía CLI
+2025-06-29 22:03:20,512,5,8,3,hexaly_row_selection,10000.0,False,,generado vía CLI
+2025-06-30 00:20:05,9,4,3,2,hexaly_column_by_column,0.0379,True,,generado vía CLI
+2025-06-30 00:20:22,50,5,5,2,hexaly_column_by_column,8.2731,True,,generado vía CLI
+2025-06-30 12:20:58,81,4,9,2,hexaly_column_by_column,10000.0,False,,generado vía CLI
+2025-06-30 14:00:54,49,4,7,2,hexaly_column_by_column,1004.6907,True,,generado vía CLI
+2025-06-30 14:01:19,343,5,7,2,hexaly_column_by_column,8.3716,True,,generado vía CLI
+2025-06-30 14:01:39,128,6,4,3,hexaly_column_by_column,10000.0,False,,generado vía CLI
+2025-06-30 15:53:07,256,5,4,3,hexaly_column_by_column,215.302,True,,generado vía CLI
+2025-06-30 16:02:24,512,5,8,2,hexaly_column_by_column,291.1075,True,,generado vía CLI
+2025-06-30 16:02:44,512,5,8,3,hexaly_column_by_column,10000.0,False,,generado vía CLI
